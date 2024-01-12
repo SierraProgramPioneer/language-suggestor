@@ -13,3 +13,5 @@ What is your preferred operating system?
 
 4. If the user prefers Windows, recommend C#. If the user prefers Linux or macOS, recommend Python or JavaScript.
 
+    console.log(jsScore, pythonScore, cScore);
+    console.log(jsGoal, pythonGoal, cGoal);

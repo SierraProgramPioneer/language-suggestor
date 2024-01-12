@@ -7,6 +7,7 @@ function suggestLanguage(goal, end, experience, os) {
     let pythonGoal = 0;
     let cScore = 0;
     let cGoal = 0;
+    console.log(end);
 
     // Get Goal Weight
     if (goal === "webApps") {
@@ -23,12 +24,13 @@ function suggestLanguage(goal, end, experience, os) {
     }
 
     // Get End Weight
-    if (end === "frontEnd") {
-        jsScore += 1;
-    }
-    else {
+    if (end === "backEnd") {
         cScore += 1;
         pythonScore += 1;
+
+    }
+    else {
+        jsScore += 1;
     }
 
     // Get Experience Weight
@@ -55,7 +57,7 @@ function suggestLanguage(goal, end, experience, os) {
 
     // Determine Language
     if (jsScore > pythonScore && jsScore > cScore) {
-        return "JavaScript";
+        return "Java Script";
     }
     else if (pythonScore > jsScore && pythonScore > cScore) {
         return "Python";
@@ -65,7 +67,7 @@ function suggestLanguage(goal, end, experience, os) {
     }
     else {
         if (jsGoal > pythonGoal && jsGoal > cGoal) {
-            return "JavaScript";
+            return "Java Script";
         }
         else if (pythonGoal > jsGoal && pythonGoal > cGoal) {
             return "Python";
@@ -84,8 +86,12 @@ function gatherUserInput(event) {
 
     // Refresh Results
 
-    let result = document.getElementById("result");
-    result.setAttribute("class", "hidden");
+    let js = document.getElementById("js");
+    js.setAttribute("class", "hidden");
+    let python = document.getElementById("python");
+    python.setAttribute("class", "hidden");
+    let c = document.getElementById("c");
+    c.setAttribute("class", "hidden");
 
     // Gather User Input
     let goal = document.querySelector("input[name='goal']:checked").value;
@@ -97,8 +103,15 @@ function gatherUserInput(event) {
     // Suggest Programming Language
     result = suggestLanguage(goal, end, experience, os);
     console.log(result);
-    //document.selectElementById("result").setAttribute("color", color);
-    // document.selectElementById("result").setAttribute("innerText", results);
+    if (result === "Java Script") {
+        document.querySelector("div#js").removeAttribute("class");
+    }
+    else if (result === "Python") {
+        document.querySelector("div#python").removeAttribute("class");
+    }
+    else if (result === "C#") {
+        document.querySelector("div#c").removeAttribute("class");
+    }
 }
 
 
