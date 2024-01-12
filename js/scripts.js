@@ -1,6 +1,5 @@
 // Goal Result
 function goalWeight(goal) {
-    console.log(goal);
     if (goal === "webApps") {
         return "js";
     }
@@ -14,12 +13,25 @@ function goalWeight(goal) {
 
 // End Result
 function endWeight(end) {
-
+    if (end === "fontEnd") {
+        return "js";
+    }
+    else {
+        return "c_python"
+    }
 }
 
 // Experience Level Result
 function experienceWeight(experience) {
-
+    if (experience === "begginer") {
+        return "js";
+    }
+    else if (experience === "some") {
+        return "python";
+    }
+    else {
+        return "c";
+    }
 }
 
 // OS Result
@@ -35,8 +47,7 @@ function suggestLanguage(goal, end, experience, os) {
 
     // Run Individual Question Functions
     goalResult = goalWeight(goal);
-    console.log(goalResult);
-    endResutls = endWeight(end);
+    endResults = endWeight(end);
     experienceResults = experienceWeight(experience);
     osResult = osWeight(os);
 
