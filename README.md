@@ -4,7 +4,7 @@
 
 #### A basic JavaScript Program to recommend a programming language based on User's input
 
-#### GH PAGES URL
+#### https://sierraprogrampioneer.github.io/language-suggestor/
 
 ## Technologies Used 
 
