@@ -1,11 +1,22 @@
 // Goal Result
+function goalWeight(goal) {
+    console.log(goal);
+}
 
 // End Result
+function endWeight(end) {
+    console.log(end);
+}
 
 // Experience Level Result
+function experienceWeight(experience) {
+    console.log(experience);
+}
 
 // OS Result
-
+function osWeight(os) {
+    console.log(os);
+}
 
 // Suggestion Language
 function suggestLanguage(goal, end, experience, os) {
@@ -14,10 +25,10 @@ function suggestLanguage(goal, end, experience, os) {
     let cScore = 0;
 
     // Run Individual Question Functions
-    goal(goal);
-    end(end);
-    experience(experience);
-    os(os);
+    goalWeight(goal);
+    endWeight(end);
+    experienceWeight(experience);
+    osWeight(os);
 
     let codeScores = [jsScore, pythonScore, cScore];
     console.log(codeScores);
