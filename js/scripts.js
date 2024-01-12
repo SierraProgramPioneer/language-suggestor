@@ -1,10 +1,30 @@
+// Goal Result
+
+// End Result
+
+// Experience Level Result
+
+// OS Result
 
 
-function suggestLanguage() {
+// Suggestion Language
+function suggestLanguage(goal, end, experience, os) {
+    let jsScore = 0;
+    let pythonScore = 0;
+    let cScore = 0;
 
+    // Run Individual Question Functions
+    goal(goal);
+    end(end);
+    experience(experience);
+    os(os);
 
+    let codeScores = [jsScore, pythonScore, cScore];
+    console.log(codeScores);
 }
 
+
+// Get User Inputs
 function gatherUserInput(event) {
     // Prevent Default Refresh
     event.preventDefault();
@@ -21,15 +41,10 @@ function gatherUserInput(event) {
     let os = document.querySelector("input[name='os']:checked").value;
     let color = document.getElementById("color").value;
 
-
-    console.log(goal);
-    console.log(end);
-    console.log(experience);
-    console.log(os);
-    console.log(color);
-
-    // // Suggest Programming Language
+    // Suggest Programming Language
+    suggestLanguage(goal, end, experience, os);
     // result = suggestLanguage(goal, end, experience, os, color);
+    //document.selectElementById("result").setAttribute("color", color);
     // document.selectElementById("result").setAttribute("innerText", results);
 }
 
