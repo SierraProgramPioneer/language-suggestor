@@ -144,7 +144,18 @@ function submitAnswers() {
 
 
 // Clear Results Button
-
+function clearResults() {
+    // Add Event Listener to Button
+    let clearResultsBtn = document.getElementByID("clear");
+    clearResultsBtn.addEventListener("click", function () {
+        let js = document.getElementById("js");
+        js.setAttribute("class", "hidden");
+        let python = document.getElementById("python");
+        python.setAttribute("class", "hidden");
+        let c = document.getElementById("c");
+        c.setAttribute("class", "hidden");
+    })
+}
 
 // Window Load Event Listener
-window.addEventListener("load", submitAnswers);
+window.addEventListener("load", submitAnswers, clearResults);
