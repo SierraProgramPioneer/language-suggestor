@@ -2,18 +2,24 @@
 // Suggest Language
 function suggestLanguage(goal, end, experience, os) {
     let jsScore = 0;
+    let jsGoal = 0;
     let pythonScore = 0;
+    let pythonGoal = 0;
     let cScore = 0;
+    let cGoal = 0;
 
     // Get Goal Weight
     if (goal === "webApps") {
         jsScore += 1;
+        jsGoal += 1;
     }
     else if (goal === "windowsApps") {
         cScore += 1;
+        cGoal += 1;
     }
     else {
         pythonScore += 1;
+        pythonGoal += 1;
     }
 
     // Get End Weight
@@ -44,9 +50,30 @@ function suggestLanguage(goal, end, experience, os) {
         jsScore += 1;
         pythonScore += 1;
     }
+    console.log(jsScore, pythonScore, cScore);
+    console.log(jsGoal, pythonGoal, cGoal);
 
-    let languageScores = [jsScore, pythonScore, cScore];
-    console.log(languageScores);
+    // Determine Language
+    if (jsScore > pythonScore && jsScore > cScore) {
+        return "JavaScript";
+    }
+    else if (pythonScore > jsScore && pythonScore > cScore) {
+        return "Python";
+    }
+    else if (cScore > jsScore && cScore > pythonScore) {
+        return "C#";
+    }
+    else {
+        if (jsGoal > pythonGoal && jsGoal > cGoal) {
+            return "JavaScript";
+        }
+        else if (pythonGoal > jsGoal && pythonGoal > cGoal) {
+            return "Python";
+        }
+        else {
+            return "C#";
+        }
+    }
 }
 
 
@@ -68,8 +95,8 @@ function gatherUserInput(event) {
     let color = document.getElementById("color").value;
 
     // Suggest Programming Language
-    suggestLanguage(goal, end, experience, os);
-    // result = suggestLanguage(goal, end, experience, os, color);
+    result = suggestLanguage(goal, end, experience, os);
+    console.log(result);
     //document.selectElementById("result").setAttribute("color", color);
     // document.selectElementById("result").setAttribute("innerText", results);
 }
