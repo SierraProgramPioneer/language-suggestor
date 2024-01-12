@@ -16,9 +16,6 @@ function endWeight(end) {
     if (end === "fontEnd") {
         return "js";
     }
-    else {
-        return "c_python"
-    }
 }
 
 // Experience Level Result
@@ -39,9 +36,6 @@ function osWeight(os) {
     if (os === "windows") {
         return "c";
     }
-    else {
-        return "js_python"
-    }
 }
 
 // Suggestion Language
@@ -52,12 +46,48 @@ function suggestLanguage(goal, end, experience, os) {
 
     // Run Individual Question Functions
     goalResult = goalWeight(goal);
-    endResults = endWeight(end);
-    experienceResults = experienceWeight(experience);
+    if (goalResult === "js") {
+        jsScore += 1;
+    }
+    else if (goalResult === "c") {
+        cScore += 1;
+    }
+    else {
+        pythonScore += 1;
+    }
+
+    endResult = endWeight(end);
+    if (endResult === "js") {
+        jsScore += 1;
+    }
+    else {
+        cScore += 1;
+        pythonScore += 1;
+    }
+
+    experienceResult = experienceWeight(experience);
+
+    if (experienceResult === "js") {
+        jsScore += 1;
+    }
+    else if (experienceResult === "c") {
+        cScore += 1;
+    }
+    else {
+        pythonScore += 1;
+    }
+
     osResult = osWeight(os);
-    console.log(osResult);
+    if (osResult === "c") {
+        cScore += 1;
+    }
+    else {
+        jsScore += 1;
+        pythonScore += 1;
+    }
 
     let languageScores = [jsScore, pythonScore, cScore];
+    console.log(languageScores);
 }
 
 
