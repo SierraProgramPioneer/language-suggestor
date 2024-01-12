@@ -9,19 +9,50 @@
 
 <body>
     <h1>Programming Language Suggestor Quiz</h1>
-
-    <form id="userInputForm">
-        <h2>What is your primary goal?</h2>
-        <h2>What type of applications do you want to build</h2>
-        <h2>What is your experience level?</h2>
-        <h2>What is your preferred operating system?</h2>
-        <h2>What is your preferred dev environment?</h2>
-        <h2>What is your favorite color?</h2>
-
-        <!-- Submit Button -->
-
-    </form>
-
+    <br>
+    <div class="form">
+        <form id="userInputForm">
+            <!-- Question 1 -->
+            <h2>What is your primary goal?</h2>
+            <input type="radio" name="goal" value="webApps" id="webApps" checked>
+            <label for="webApps">Build Web Apps</label><br>
+            <input type="radio" name="goal" value="windowsApps" id="windowsApps">
+            <label for="windowsApps">Build Windows Apps</label><br>
+            <input type="radio" name="goal" value="dataAnalysis" id="dataAnalysis">
+            <label for="dataAnalysis">Data Analysis</label><br>
+            <br>
+            <!-- Question 2 -->
+            <h2>What type of applications do you want to build</h2>
+            <input type="radio" name="end" value="fontEnd" id="frontEnd" checked>
+            <label for="frontEnd">Front End</label><br>
+            <input type="radio" name=end" value="backEnd" id="backEnd">
+            <label for="backEnd">Back End</label><br>
+            <br>
+            <!-- Question 3 -->
+            <h2>What is your experience level?</h2>
+            <input type="radio" name="experience" value="begginer" id="begginer" checked>
+            <label for="begginer">No Experience</label><br>
+            <input type="radio" name="experience" value="some" id="some">
+            <label for="some">Some Experience</label><br>
+            <input type="radio" name="experience" value="pro" id="pro">
+            <label for="pro">Pro</label><br>
+            <br>
+            <!-- Question 4 -->
+            <h2>What is your preferred operating system?</h2>
+            <input type="radio" name="os" value="windows" id="windows" checked>
+            <label for="windows">Windows</label><br>
+            <input type="radio" name="os" value="linMac" id="linMac">
+            <label for="linMac">Linux or macOS</label><br>
+            <br>
+            <!-- Question 5 -->
+            <h2>Select your favorite color:</h2>
+            <input id="color" type="color">
+            <label for="color"></label>
+            <br><br>
+            <!-- Submit Button -->
+            <button class="button" type="submit">Get your recommendation!</button>
+        </form>
+    </div>
     <!-- Result -->
     <div class="hidden">
         <h2 id="result"></h2>
