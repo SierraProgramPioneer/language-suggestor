@@ -1,63 +1,23 @@
-// Goal Result
-function goalWeight(goal) {
-    if (goal === "webApps") {
-        return "js";
-    }
-    else if (goal === "windowsApps") {
-        return "c";
-    }
-    else {
-        return "python";
-    }
-}
 
-// End Result
-function endWeight(end) {
-    if (end === "fontEnd") {
-        return "js";
-    }
-}
-
-// Experience Level Result
-function experienceWeight(experience) {
-    if (experience === "begginer") {
-        return "js";
-    }
-    else if (experience === "some") {
-        return "python";
-    }
-    else {
-        return "c";
-    }
-}
-
-// OS Result
-function osWeight(os) {
-    if (os === "windows") {
-        return "c";
-    }
-}
-
-// Suggestion Language
+// Suggest Language
 function suggestLanguage(goal, end, experience, os) {
     let jsScore = 0;
     let pythonScore = 0;
     let cScore = 0;
 
-    // Run Individual Question Functions
-    goalResult = goalWeight(goal);
-    if (goalResult === "js") {
+    // Get Goal Weight
+    if (goal === "webApps") {
         jsScore += 1;
     }
-    else if (goalResult === "c") {
+    else if (goal === "windowsApps") {
         cScore += 1;
     }
     else {
         pythonScore += 1;
     }
 
-    endResult = endWeight(end);
-    if (endResult === "js") {
+    // Get End Weight
+    if (end === "frontEnd") {
         jsScore += 1;
     }
     else {
@@ -65,20 +25,19 @@ function suggestLanguage(goal, end, experience, os) {
         pythonScore += 1;
     }
 
-    experienceResult = experienceWeight(experience);
-
-    if (experienceResult === "js") {
+    // Get Experience Weight
+    if (experience === "begginer") {
         jsScore += 1;
     }
-    else if (experienceResult === "c") {
-        cScore += 1;
-    }
-    else {
+    else if (experience === "some") {
         pythonScore += 1;
     }
+    else {
+        cScore += 1;
+    }
 
-    osResult = osWeight(os);
-    if (osResult === "c") {
+    // Get OS Weight
+    if (os === "windows") {
         cScore += 1;
     }
     else {
