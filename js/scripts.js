@@ -1,4 +1,4 @@
-// Determine User Color Brightness to change font
+// Determine Results Font Color Based on User's Favorite Color
 
 function findBrightness(color) {
     let hex = color.substring(1);
@@ -13,7 +13,6 @@ function findBrightness(color) {
     else {
         textColor = "#000000";
     }
-    console.log(textColor);
     return textColor;
 }
 
