@@ -36,7 +36,12 @@ function experienceWeight(experience) {
 
 // OS Result
 function osWeight(os) {
-
+    if (os === "windows") {
+        return "c";
+    }
+    else {
+        return "js_python"
+    }
 }
 
 // Suggestion Language
@@ -50,6 +55,7 @@ function suggestLanguage(goal, end, experience, os) {
     endResults = endWeight(end);
     experienceResults = experienceWeight(experience);
     osResult = osWeight(os);
+    console.log(osResult);
 
     let languageScores = [jsScore, pythonScore, cScore];
 }
