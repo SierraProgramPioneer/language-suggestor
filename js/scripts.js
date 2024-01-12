@@ -1,3 +1,22 @@
+// Determine User Color Brightness to change font
+
+function findBrightness(color) {
+    let hex = color.substring(1);
+    let r = parseInt(hex.substring(0, 2), 16);
+    let g = parseInt(hex.substring(2, 4), 16);
+    let b = parseInt(hex.substring(4, 6), 16);
+    let brightness = (0.299 * r + 0.587 * g + 0.114 * b);
+    let textColor;
+    if (brightness < 128) {
+        textColor = "#FFFFFF";
+    }
+    else {
+        textColor = "#000000";
+    }
+    console.log(textColor);
+    return textColor;
+}
+
 
 // Suggest Language
 function suggestLanguage(goal, end, experience, os) {
@@ -91,23 +110,28 @@ function gatherUserInput(event) {
     c.setAttribute("class", "hidden");
 
     // Gather User Input
+    let color = document.getElementById("color").value;
+    textColor = findBrightness(color);
+
     let goal = document.querySelector("input[name='goal']:checked").value;
     let end = document.querySelector("input[name='end']:checked").value;
     let experience = document.querySelector("input[name='experience']:checked").value;
     let os = document.querySelector("input[name='os']:checked").value;
-    let color = document.getElementById("color").value;
-    console.log(color);
+
     // Suggest Programming Language
     result = suggestLanguage(goal, end, experience, os);
     if (result === "Java Script") {
         document.querySelector("div#js").removeAttribute("class");
         document.querySelector("div#js").style.backgroundColor = color;
+        document.querySelector("div#js").style.color = textColor;
     }
     else if (result === "Python") {
         document.querySelector("div#python").removeAttribute("class");
+        document.querySelector("div#python").style.backgroundColor = color;
     }
     else if (result === "C#") {
         document.querySelector("div#c").removeAttribute("class");
+        document.querySelector("div#c").style.backgroundColor = color;
     }
 }
 

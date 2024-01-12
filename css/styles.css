@@ -5,6 +5,7 @@ body {
     padding-left: 20px;
 }
 
+
 .form h2 {
     font-size: 24px;
 }
@@ -18,14 +19,17 @@ body {
     padding: 10px;
 }
 
+
+div {
+    padding: 15px;
+}
+
+
 .hidden {
     display: none;
 }
 
+
 img {
     height: 200px;
-}
-
-div {
-    padding: 10px;
 }
