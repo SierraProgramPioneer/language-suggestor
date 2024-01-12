@@ -1,0 +1,16 @@
+What is your primary goal in learning a programming language?
+What type of applications do you want to build?
+What is your experience level with programming?
+What is your preferred operating system?
+What is your preferred development environment?
+
+
+1. If the user’s primary goal is to build web applications, recommend JavaScript. If the user’s primary goal is to build Windows applications, recommend C#. If the user’s primary goal is data analysis, recommend Python.
+
+2. If the user wants to build web applications, ask if they want to build front-end or back-end applications. If the user wants to build front-end applications, recommend JavaScript. If the user wants to build back-end applications, recommend Python or C# depending on their experience level.
+
+3. If the user has no experience with programming, recommend JavaScript. If the user has some experience with programming, ask what languages they have experience with and recommend a language that is similar to what they already know.
+
+4. If the user prefers Windows, recommend C#. If the user prefers Linux or macOS, recommend Python or JavaScript.
+
+5. If the user prefers an integrated development environment (IDE), recommend C# or Python. If the user prefers a text editor, recommend JavaScript.
