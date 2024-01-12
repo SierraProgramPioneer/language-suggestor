@@ -7,7 +7,6 @@ function suggestLanguage(goal, end, experience, os) {
     let pythonGoal = 0;
     let cScore = 0;
     let cGoal = 0;
-    console.log(end);
 
     // Get Goal Weight
     if (goal === "webApps") {
@@ -52,8 +51,6 @@ function suggestLanguage(goal, end, experience, os) {
         jsScore += 1;
         pythonScore += 1;
     }
-    console.log(jsScore, pythonScore, cScore);
-    console.log(jsGoal, pythonGoal, cGoal);
 
     // Determine Language
     if (jsScore > pythonScore && jsScore > cScore) {
@@ -99,12 +96,12 @@ function gatherUserInput(event) {
     let experience = document.querySelector("input[name='experience']:checked").value;
     let os = document.querySelector("input[name='os']:checked").value;
     let color = document.getElementById("color").value;
-
+    console.log(color);
     // Suggest Programming Language
     result = suggestLanguage(goal, end, experience, os);
-    console.log(result);
     if (result === "Java Script") {
         document.querySelector("div#js").removeAttribute("class");
+        document.querySelector("div#js").style.backgroundColor = color;
     }
     else if (result === "Python") {
         document.querySelector("div#python").removeAttribute("class");
