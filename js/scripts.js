@@ -110,7 +110,7 @@ function gatherUserInput(event) {
 
     // Gather User Input
     let color = document.getElementById("color").value;
-    textColor = findBrightness(color);
+    const textColor = findBrightness(color);
 
     let goal = document.querySelector("input[name='goal']:checked").value;
     let end = document.querySelector("input[name='end']:checked").value;
@@ -118,7 +118,7 @@ function gatherUserInput(event) {
     let os = document.querySelector("input[name='os']:checked").value;
 
     // Suggest Programming Language
-    result = suggestLanguage(goal, end, experience, os);
+    const result = suggestLanguage(goal, end, experience, os);
     if (result === "Java Script") {
         document.querySelector("div#js").removeAttribute("class");
         document.querySelector("div#js").style.backgroundColor = color;
